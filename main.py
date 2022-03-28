@@ -1,7 +1,7 @@
 import streamlit as st
-import keras
-from keras.applications.inception_v3 import InceptionV3
-from keras.layers import Flatten, Dense
+import tensorflow.keras as keras
+from tensorflow.keras.applications.inception_v3 import InceptionV3
+from tensorflow.keras.layers import Flatten, Dense
 import numpy as np
 from PIL import Image, ImageOps
 import cv2
@@ -9,6 +9,7 @@ import cv2
 st.header("Alzheimer's Disease Prediction")
 st.subheader("Predicts the diagnosis of Alzheimer's disease based on the patient's mri image.")
 st.write("This application uses InceptionV3")
+
 
 #@st.cache()
 def load_model():
@@ -46,6 +47,7 @@ def import_and_predict(image_data, model):
     img_reshape = img[np.newaxis, ...]
     prediction = model.predict(img_reshape)
     return prediction
+
 
 if file is None:
     st.text("No image file has been uploaded.")
