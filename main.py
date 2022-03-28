@@ -28,7 +28,7 @@ def load_model():
     model.add(Dense(4, activation='softmax'))
     model.summary()
 
-    model.load_weights(r"static\InceptionV3_weights.h5")
+    model.load_weights(r"InceptionV3_weights.h5")
 
     return model
 
